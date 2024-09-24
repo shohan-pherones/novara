@@ -55,3 +55,14 @@ export const socialItems = [
     url: "/",
   },
 ];
+
+export const heroItems = {
+  home: {
+    image: "/images/pexels-shkrabaanthony-5205668.jpg",
+    headline: "Elevate Your Beauty, Indulge in Tranquility",
+    description:
+      "At Novara, we blend luxury beauty treatments with soothing spa experiences to rejuvenate your mind, body, and soul. From skincare to relaxation therapies, our expert team is dedicated to helping you look and feel your best. Discover a world where beauty meets serenity.",
+    ctaLabel: "Discover Bliss – Make an Appointment",
+    ctaRoute: "/services",
+  },
+};
