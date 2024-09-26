@@ -1,7 +1,7 @@
 import { serviceItems } from "@/constants";
 import SectionTitle from "./SectionTitle";
 import ServiceItem from "./ServiceItem";
-import Link from "next/link";
+import ViewMoreButton from "./ViewMoreButton";
 
 const Services = () => {
   return (
@@ -12,11 +12,7 @@ const Services = () => {
           <ServiceItem key={service.id} service={service} />
         ))}
       </div>
-      <div className="mt-10 flex justify-center">
-        <Link href="/services" className="btn btn-outline">
-          View More Services
-        </Link>
-      </div>
+      <ViewMoreButton route="/services" label="View More Services" />
     </section>
   );
 };

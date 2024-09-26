@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Specialists from "@/components/Specialists";
 import { heroItems } from "@/constants";
 
 const HomePage = () => {
@@ -13,6 +14,7 @@ const HomePage = () => {
         ctaRoute={heroItems.home.ctaRoute}
       />
       <Services />
+      <Specialists />
     </main>
   );
 };

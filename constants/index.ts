@@ -105,3 +105,34 @@ export const serviceItems = [
     price: 130,
   },
 ];
+
+export const specialistItems = [
+  {
+    id: 1,
+    name: "Sophia Carter",
+    image:
+      "https://images.pexels.com/photos/5659009/pexels-photo-5659009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    bio: "Sophia is a licensed esthetician with 8+ years of experience in skincare treatments, specializing in facials and chemical peels.",
+  },
+  {
+    id: 2,
+    name: "Liam Johnson",
+    image:
+      "https://images.pexels.com/photos/331989/pexels-photo-331989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    bio: "Liam is a professional hairstylist known for creating stunning styles for all hair types. With 10 years of expertise, he excels in color treatments and modern cuts.",
+  },
+  {
+    id: 3,
+    name: "Emma Patel",
+    image:
+      "https://images.pexels.com/photos/3997350/pexels-photo-3997350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    bio: "Emma is a certified nail technician with a passion for creative nail art and intricate designs. She has been perfecting manicures and pedicures for over 6 years.",
+  },
+  {
+    id: 4,
+    name: "James Walker",
+    image:
+      "https://images.pexels.com/photos/9898597/pexels-photo-9898597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    bio: "James is an expert massage therapist specializing in deep tissue and relaxation techniques. He brings over 12 years of experience to help clients relieve stress and tension.",
+  },
+];
