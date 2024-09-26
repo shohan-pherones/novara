@@ -2,6 +2,7 @@ import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Specialists from "@/components/Specialists";
+import Testimonials from "@/components/Testimonials";
 import { heroItems } from "@/constants";
 
 const HomePage = () => {
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Services />
       <Specialists />
       <Gallery />
+      <Testimonials />
     </main>
   );
 };
