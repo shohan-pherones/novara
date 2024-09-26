@@ -58,7 +58,7 @@ export const socialItems = [
 
 export const heroItems = {
   home: {
-    image: "/images/pexels-shkrabaanthony-5205668.jpg",
+    image: "/images/hero__01.jpg",
     headline: "Elevate Your Beauty, Indulge in Tranquility",
     description:
       "At Novara, we blend luxury beauty treatments with soothing spa experiences to rejuvenate your mind, body, and soul. From skincare to relaxation therapies, our expert team is dedicated to helping you look and feel your best. Discover a world where beauty meets serenity.",
@@ -134,5 +134,58 @@ export const specialistItems = [
     image:
       "https://images.pexels.com/photos/9898597/pexels-photo-9898597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bio: "James is an expert massage therapist specializing in deep tissue and relaxation techniques. He brings over 12 years of experience to help clients relieve stress and tension.",
+  },
+];
+
+export const galleryItems = [
+  {
+    id: 1,
+    image: "/images/gallery__01.jpg",
+    alt: "Skincare treatment in progress",
+  },
+  {
+    id: 2,
+    image: "/images/gallery__02.jpg",
+    alt: "Relaxing massage session",
+  },
+  {
+    id: 3,
+    image: "/images/gallery__03.jpg",
+    alt: "Professional skincare facial",
+  },
+  {
+    id: 4,
+    image: "/images/gallery__04.jpg",
+    alt: "Advanced skincare therapy",
+  },
+  {
+    id: 5,
+    image: "/images/gallery__05.jpg",
+    alt: "Creative nail art design",
+  },
+  {
+    id: 6,
+    image: "/images/gallery__06.jpg",
+    alt: "Skincare product application",
+  },
+  {
+    id: 7,
+    image: "/images/gallery__07.jpg",
+    alt: "Nail treatment and manicure",
+  },
+  {
+    id: 8,
+    image: "/images/gallery__08.jpg",
+    alt: "Expert haircut and styling",
+  },
+  {
+    id: 9,
+    image: "/images/gallery__09.jpg",
+    alt: "Spa session for relaxation",
+  },
+  {
+    id: 10,
+    image: "/images/gallery__10.jpg",
+    alt: "Skincare consultation and treatment",
   },
 ];

@@ -1,3 +1,4 @@
+import Gallery from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Specialists from "@/components/Specialists";
@@ -15,6 +16,7 @@ const HomePage = () => {
       />
       <Services />
       <Specialists />
+      <Gallery />
     </main>
   );
 };
