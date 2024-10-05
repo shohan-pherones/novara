@@ -65,6 +65,22 @@ export const heroItems = {
     ctaLabel: "Discover Bliss – Make an Appointment",
     ctaRoute: "/services",
   },
+  services: {
+    image: "/images/hero__02.jpg",
+    headline: "Unwind, Refresh, Revitalize",
+    description:
+      "Explore our curated range of beauty and spa services at Novara. Whether you're looking for a revitalizing facial, a calming massage, or a complete makeover, our specialized treatments are designed to meet your needs. Step into a world of relaxation and care, tailored just for you.",
+    ctaLabel: "Explore Our Services",
+    ctaRoute: "/services#browse",
+  },
+  specialists: {
+    image: "/images/hero__03.jpg",
+    headline: "Meet the Experts Behind the Experience",
+    description:
+      "Our team of beauty and wellness specialists at Novara are dedicated professionals with years of expertise in the industry. From master aestheticians to experienced therapists, each specialist brings their unique skills to ensure you receive the best care possible. Discover the people who make your beauty and relaxation journey exceptional.",
+    ctaLabel: "Get to Know Our Specialists",
+    ctaRoute: "/specialists#browse",
+  },
 };
 
 export const serviceItems = [

@@ -3,16 +3,29 @@ import SectionTitle from "./SectionTitle";
 import SpecialistItem from "./SpecialistItem";
 import ViewMoreButton from "./ViewMoreButton";
 
-const Specialists = () => {
+const Specialists = ({
+  isSpecialistsPage,
+}: {
+  isSpecialistsPage?: boolean;
+}) => {
   return (
-    <section className="wrapper">
+    <section id="browse" className="wrapper">
       <SectionTitle title="Specialists" />
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
-        {specialistItems.map((specialist) => (
-          <SpecialistItem key={specialist.id} specialist={specialist} />
-        ))}
+        {isSpecialistsPage &&
+          specialistItems.map((specialist) => (
+            <SpecialistItem key={specialist.id} specialist={specialist} />
+          ))}
+        {!isSpecialistsPage &&
+          specialistItems
+            .slice(0, 8)
+            .map((specialist) => (
+              <SpecialistItem key={specialist.id} specialist={specialist} />
+            ))}
       </div>
-      <ViewMoreButton route="/specialists" label="View More Specialists" />
+      {!isSpecialistsPage && (
+        <ViewMoreButton route="/specialists" label="View More Specialists" />
+      )}
     </section>
   );
 };
