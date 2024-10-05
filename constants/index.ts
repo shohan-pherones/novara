@@ -189,3 +189,106 @@ export const galleryItems = [
     alt: "Skincare consultation and treatment",
   },
 ];
+
+export const testimonialItems = [
+  {
+    id: 1,
+    name: "Sophia Lane",
+    designation: "Marketing Manager",
+    company: "Glow Inc.",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "Had a wonderful experience at Novara! The ambiance was calming, and the staff was so attentive. Highly recommend it!",
+  },
+  {
+    id: 2,
+    name: "Ethan West",
+    designation: "Software Engineer",
+    company: "TechWave",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "The services were decent but a bit overpriced for what was offered. I expected a more luxurious experience.",
+  },
+  {
+    id: 3,
+    name: "Isabella Grace",
+    designation: "Freelance Writer",
+    company: "None",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "Absolutely love Novara! My skin has never felt better after their facial treatment. Will definitely come back!",
+  },
+  {
+    id: 4,
+    name: "James Taylor",
+    designation: "Business Analyst",
+    company: "Insight Corp.",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "The place was nice, but I wasn't completely satisfied with the massage. It lacked the pressure I was looking for.",
+  },
+  {
+    id: 5,
+    name: "Olivia Parker",
+    designation: "Event Planner",
+    company: "Perfect Events",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "Fantastic service! The staff made me feel pampered from the moment I walked in. Novara is my go-to spot now!",
+  },
+  {
+    id: 6,
+    name: "Michael Adams",
+    designation: "Accountant",
+    company: "Finance Pro",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "The facial was good, but the wait time was longer than expected. The overall experience was okay.",
+  },
+  {
+    id: 7,
+    name: "Emma Brooks",
+    designation: "Interior Designer",
+    company: "Creative Spaces",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "I had the best manicure at Novara! The products they used felt luxurious, and my nails look flawless!",
+  },
+  {
+    id: 8,
+    name: "Daniel Foster",
+    designation: "Photographer",
+    company: "Focus Lens",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "The spa was peaceful, but the massage didn’t meet my expectations. I’ve had better experiences elsewhere.",
+  },
+  {
+    id: 9,
+    name: "Sophia Evans",
+    designation: "Teacher",
+    company: "Bright Minds Academy",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "Good experience overall. The facial was refreshing, but I think the prices could be more competitive.",
+  },
+  {
+    id: 10,
+    name: "Liam Bennett",
+    designation: "Real Estate Agent",
+    company: "Urban Realty",
+    image:
+      "https://images.pexels.com/photos/28302550/pexels-photo-28302550/free-photo-of-a-woman-sitting-on-a-stool-with-her-hair-in-a-bun.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    review:
+      "Amazing service! The Novara team was friendly and professional. My massage session was exactly what I needed!",
+  },
+];
