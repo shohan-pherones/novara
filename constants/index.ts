@@ -308,3 +308,5 @@ export const testimonialItems = [
       "Amazing service! The Novara team was friendly and professional. My massage session was exactly what I needed!",
   },
 ];
+
+export const DURATION_FACTOR = 0.6;
