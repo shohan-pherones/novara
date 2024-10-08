@@ -1,24 +1,18 @@
 "use client";
 
-import { DURATION_FACTOR } from "@/constants";
+import { bookings, DURATION_FACTOR, timeslots } from "@/constants";
+import { TService } from "@/types";
+import moment from "moment";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-interface ServiceDetailsProps {
-  service: {
-    id: number;
-    title: string;
-    image: string;
-    description: string;
-    price: number;
-  };
-}
-
-const ServiceDetails = ({ service }: ServiceDetailsProps) => {
+const ServiceDetails = ({ service }: { service: TService }) => {
   const [duration, setDuration] = useState<string>("1");
   const [updatedPrice, setUpdatedPrice] = useState<number>(service.price);
   const [serviceClass, setServiceClass] = useState<string>("economy");
   const [date, setDate] = useState<string>("");
+  const [slots, setSlots] = useState<string[]>([]);
+  const [selectedSlot, setSelectedSlot] = useState<string>("");
 
   useEffect(() => {
     if (duration === "1") {
@@ -39,6 +33,30 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
       setUpdatedPrice((prev) => prev * 3);
     }
   }, [serviceClass, service.price]);
+
+  useEffect(() => {
+    const today = moment(new Date());
+    const selectedDate = moment(new Date(date));
+    const dateDifference = selectedDate.diff(today, "days");
+
+    if (dateDifference < 0) {
+      console.log("Invalid date");
+    } else {
+      const matchedBookings = bookings.filter(
+        (booking) => booking.date === date && booking.duration === duration
+      );
+
+      const bookedTimeSlots = matchedBookings.map(
+        (booking) => booking.timeslot
+      );
+
+      const availableTimeSlots = timeslots[
+        duration as keyof typeof timeslots
+      ].filter((slot) => !bookedTimeSlots.includes(slot));
+
+      setSlots(availableTimeSlots);
+    }
+  }, [date, duration]);
 
   return (
     <section className="h-[calc(100vh-4rem)] grid grid-cols-2 gap-10">
@@ -102,17 +120,37 @@ const ServiceDetails = ({ service }: ServiceDetailsProps) => {
           <h3 className="text-lg md:text-xl font-semibold">
             Select your timetable
           </h3>
-          <label className="form-control w-full">
-            <div className="label">
-              <span className="label-text">Choose a suitable date</span>
-            </div>
-            <input
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-              className="input input-bordered w-full"
-            />
-          </label>
+          <div className="flex gap-5">
+            <label className="form-control w-full">
+              <div className="label">
+                <span className="label-text">Choose a suitable date</span>
+              </div>
+              <input
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                type="date"
+                className="input input-bordered w-full"
+              />
+            </label>
+            <label className="form-control w-full">
+              <div className="label">
+                <span className="label-text">Pick your timeslot</span>
+              </div>
+              <select
+                value={selectedSlot}
+                onChange={(e) => setSelectedSlot(e.target.value)}
+                className="select select-bordered"
+              >
+                {slots.length > 0 &&
+                  slots.map((slot, idx) => (
+                    <option key={idx} value={slot}>
+                      {slot}
+                    </option>
+                  ))}
+                {slots.length === 0 && <option disabled>No slot found</option>}
+              </select>
+            </label>
+          </div>
         </div>
       </div>
     </section>

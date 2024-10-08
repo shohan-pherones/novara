@@ -1,3 +1,4 @@
+import { TService } from "@/types";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const navItems = [
@@ -310,3 +311,77 @@ export const testimonialItems = [
 ];
 
 export const DURATION_FACTOR = 0.6;
+
+export const bookings: {
+  id: number;
+  user?: null;
+  service: TService;
+  duration: string;
+  updatedPrice: number;
+  serviceClass: string;
+  date: string;
+  timeslot: string;
+}[] = [
+  {
+    id: 1,
+    service: {
+      id: 3,
+      title: "Deluxe Manicure & Pedicure",
+      image:
+        "https://images.pexels.com/photos/6724402/pexels-photo-6724402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description:
+        "Treat your hands and feet to a luxurious manicure and pedicure, complete with exfoliation, hydration, and polish.",
+      price: 90,
+    },
+    duration: "5",
+    updatedPrice: 270,
+    serviceClass: "economy",
+    date: "2024-10-09",
+    timeslot: "8AM - 1PM",
+  },
+  {
+    id: 1,
+    service: {
+      id: 3,
+      title: "Deluxe Manicure & Pedicure",
+      image:
+        "https://images.pexels.com/photos/6724402/pexels-photo-6724402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      description:
+        "Treat your hands and feet to a luxurious manicure and pedicure, complete with exfoliation, hydration, and polish.",
+      price: 90,
+    },
+    duration: "5",
+    updatedPrice: 270,
+    serviceClass: "economy",
+    date: "2024-10-09",
+    timeslot: "1PM - 6PM",
+  },
+];
+
+export const timeslots = {
+  "1": [
+    "8AM - 9AM",
+    "9AM - 10AM",
+    "10AM - 11AM",
+    "11AM - 12PM",
+    "12PM - 1PM",
+    "1PM - 2PM",
+    "2PM - 3PM",
+    "3PM - 4PM",
+    "4PM - 5PM",
+    "5PM - 6PM",
+    "6PM - 7PM",
+    "7PM - 8PM",
+  ],
+  "2": [
+    "8AM - 10AM",
+    "10AM - 12PM",
+    "12PM - 2PM",
+    "2PM - 4PM",
+    "4PM - 6PM",
+    "6PM - 8PM",
+  ],
+  "3": ["8AM - 11AM", "11AM - 2PM", "2PM - 5PM", "5PM - 8PM"],
+  "4": ["8AM - 12PM", "4PM - 8PM"],
+  "5": ["8AM - 1PM", "1PM - 6PM"],
+};
