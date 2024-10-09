@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="valentine">
       <body className={cn(baiJamjuree.className, "antialiased")}>
+        <Toaster position="top-center" reverseOrder={false} />
         <Navbar />
         {children}
         <Footer />

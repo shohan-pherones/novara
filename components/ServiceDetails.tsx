@@ -1,10 +1,13 @@
 "use client";
 
 import { bookings, DURATION_FACTOR, timeslots } from "@/constants";
-import { TService } from "@/types";
+import { bookingSchema, TBooking, TService } from "@/validators";
+import { ArrowLeft } from "lucide-react";
 import moment from "moment";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const ServiceDetails = ({ service }: { service: TService }) => {
   const [duration, setDuration] = useState<string>("1");
@@ -13,6 +16,8 @@ const ServiceDetails = ({ service }: { service: TService }) => {
   const [date, setDate] = useState<string>("");
   const [slots, setSlots] = useState<string[]>([]);
   const [selectedSlot, setSelectedSlot] = useState<string>("");
+
+  const router = useRouter();
 
   useEffect(() => {
     if (duration === "1") {
@@ -40,10 +45,17 @@ const ServiceDetails = ({ service }: { service: TService }) => {
     const dateDifference = selectedDate.diff(today, "days");
 
     if (dateDifference < 0) {
-      console.log("Invalid date");
+      setSlots([]);
+      setSelectedSlot("");
+      toast.error(
+        "Invalid date selected. Please choose a current or future date."
+      );
     } else {
       const matchedBookings = bookings.filter(
-        (booking) => booking.date === date && booking.duration === duration
+        (booking) =>
+          booking.date === date &&
+          booking.duration === duration &&
+          booking.service.id === service.id
       );
 
       const bookedTimeSlots = matchedBookings.map(
@@ -55,12 +67,45 @@ const ServiceDetails = ({ service }: { service: TService }) => {
       ].filter((slot) => !bookedTimeSlots.includes(slot));
 
       setSlots(availableTimeSlots);
+      setSelectedSlot(availableTimeSlots[0]);
     }
-  }, [date, duration]);
+  }, [date, duration, service.id]);
+
+  const handleCheckout = async () => {
+    if (!date) {
+      toast.error(
+        "Invalid date selected. Please choose a current or future date."
+      );
+      return;
+    }
+
+    if (!selectedSlot) {
+      toast.error("Please pick an available timeslot.");
+      return;
+    }
+
+    const bookingData = {
+      service,
+      duration,
+      serviceClass,
+      updatedPrice,
+      date,
+      timeslot: selectedSlot,
+    } satisfies TBooking;
+
+    const parsedBookingData = await bookingSchema.safeParseAsync(bookingData);
+
+    if (!parsedBookingData.success) {
+      toast.error("Data validation failed, please input valid data.");
+      return;
+    } else {
+      console.log(parsedBookingData.data);
+    }
+  };
 
   return (
-    <section className="h-[calc(100vh-4rem)] grid grid-cols-2 gap-10">
-      <div className="w-full h-full overflow-hidden">
+    <section className="grid md:grid-cols-2 md:min-h-screen">
+      <div className="w-full h-full overflow-hidden bg-rose-500">
         <Image
           src={service.image}
           alt={service.title}
@@ -70,9 +115,15 @@ const ServiceDetails = ({ service }: { service: TService }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="flex flex-col justify-center gap-10 pr-10">
+      <div className="flex flex-col justify-center gap-10 pr-10 wrapper">
         {/* PACKAGE DETAILS */}
         <div className="flex flex-col gap-2">
+          <button
+            onClick={() => router.back()}
+            className="btn btn-outline w-fit"
+          >
+            <ArrowLeft /> Back
+          </button>
           <h2 className="text-2xl md:text-3xl font-bold">{service.title}</h2>
           <p>{service.description}</p>
           <h2 className="text-2xl md:text-3xl font-bold">${updatedPrice}</h2>
@@ -82,7 +133,7 @@ const ServiceDetails = ({ service }: { service: TService }) => {
           <h3 className="text-lg md:text-xl font-semibold">
             Customize your beauty package
           </h3>
-          <div className="flex gap-5">
+          <div className="flex flex-col md:flex-row gap-5">
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text">Pick your service duration</span>
@@ -120,7 +171,7 @@ const ServiceDetails = ({ service }: { service: TService }) => {
           <h3 className="text-lg md:text-xl font-semibold">
             Select your timetable
           </h3>
-          <div className="flex gap-5">
+          <div className="flex flex-col md:flex-row gap-5">
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text">Choose a suitable date</span>
@@ -152,6 +203,9 @@ const ServiceDetails = ({ service }: { service: TService }) => {
             </label>
           </div>
         </div>
+        <button onClick={handleCheckout} className="btn btn-primary">
+          Proceed to Checkout
+        </button>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { TService } from "@/types";
+import { TBooking } from "@/validators";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const navItems = [
@@ -312,16 +312,7 @@ export const testimonialItems = [
 
 export const DURATION_FACTOR = 0.6;
 
-export const bookings: {
-  id: number;
-  user?: null;
-  service: TService;
-  duration: string;
-  updatedPrice: number;
-  serviceClass: string;
-  date: string;
-  timeslot: string;
-}[] = [
+export const bookings: TBooking[] = [
   {
     id: 1,
     service: {
