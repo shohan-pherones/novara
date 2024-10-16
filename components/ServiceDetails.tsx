@@ -40,8 +40,8 @@ const ServiceDetails = ({ service }: { service: TService }) => {
   }, [serviceClass, service.price]);
 
   useEffect(() => {
-    const today = moment(new Date());
-    const selectedDate = moment(new Date(date));
+    const today = moment().startOf("day");
+    const selectedDate = moment(new Date(date)).startOf("day");
     const dateDifference = selectedDate.diff(today, "days");
 
     if (dateDifference < 0) {
@@ -62,12 +62,26 @@ const ServiceDetails = ({ service }: { service: TService }) => {
         (booking) => booking.timeslot
       );
 
-      const availableTimeSlots = timeslots[
+      let availableTimeSlots = timeslots[
         duration as keyof typeof timeslots
       ].filter((slot) => !bookedTimeSlots.includes(slot));
 
+      if (dateDifference === 0) {
+        const currentTime = moment();
+        availableTimeSlots = availableTimeSlots.filter((slot) => {
+          const [startTime] = slot.split(" - ");
+          const [startHour] = startTime.split(/AM|PM/);
+          const isPM = startTime.includes("PM");
+          let slotStartHour = parseInt(startHour, 10);
+          if (isPM && slotStartHour !== 12) slotStartHour += 12;
+          if (!isPM && slotStartHour === 12) slotStartHour = 0;
+
+          return slotStartHour > currentTime.hours();
+        });
+      }
+
       setSlots(availableTimeSlots);
-      setSelectedSlot(availableTimeSlots[0]);
+      setSelectedSlot(availableTimeSlots[0] || "");
     }
   }, [date, duration, service.id]);
 
@@ -97,7 +111,6 @@ const ServiceDetails = ({ service }: { service: TService }) => {
 
     if (!parsedBookingData.success) {
       toast.error("Data validation failed, please input valid data.");
-      return;
     } else {
       console.log(parsedBookingData.data);
     }
