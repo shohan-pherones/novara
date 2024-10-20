@@ -130,6 +130,26 @@ export const specialistItems = [
     image:
       "https://images.pexels.com/photos/5659009/pexels-photo-5659009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bio: "Sophia is a licensed esthetician with 8+ years of experience in skincare treatments, specializing in facials and chemical peels.",
+    packages: [
+      {
+        id: 1,
+        title: "Luxury Facial Treatment",
+        image:
+          "https://images.pexels.com/photos/5659018/pexels-photo-5659018.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description:
+          "A revitalizing facial that cleanses, exfoliates, and hydrates your skin, leaving it glowing and refreshed.",
+        price: 150,
+      },
+      {
+        id: 2,
+        title: "Aromatherapy Massage",
+        image:
+          "https://images.pexels.com/photos/5659006/pexels-photo-5659006.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description:
+          "A relaxing full-body massage with essential oils designed to soothe muscles and promote mental relaxation.",
+        price: 120,
+      },
+    ],
   },
   {
     id: 2,
@@ -137,6 +157,17 @@ export const specialistItems = [
     image:
       "https://images.pexels.com/photos/331989/pexels-photo-331989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bio: "Liam is a professional hairstylist known for creating stunning styles for all hair types. With 10 years of expertise, he excels in color treatments and modern cuts.",
+    packages: [
+      {
+        id: 3,
+        title: "Deluxe Manicure & Pedicure",
+        image:
+          "https://images.pexels.com/photos/6724402/pexels-photo-6724402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description:
+          "Treat your hands and feet to a luxurious manicure and pedicure, complete with exfoliation, hydration, and polish.",
+        price: 90,
+      },
+    ],
   },
   {
     id: 3,
@@ -144,6 +175,17 @@ export const specialistItems = [
     image:
       "https://images.pexels.com/photos/3997350/pexels-photo-3997350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bio: "Emma is a certified nail technician with a passion for creative nail art and intricate designs. She has been perfecting manicures and pedicures for over 6 years.",
+    packages: [
+      {
+        id: 4,
+        title: "Detoxifying Body Wrap",
+        image:
+          "https://images.pexels.com/photos/6144438/pexels-photo-6144438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description:
+          "A full-body detox wrap that purifies your skin, removes toxins, and leaves your body feeling rejuvenated.",
+        price: 130,
+      },
+    ],
   },
   {
     id: 4,
@@ -151,6 +193,17 @@ export const specialistItems = [
     image:
       "https://images.pexels.com/photos/9898597/pexels-photo-9898597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     bio: "James is an expert massage therapist specializing in deep tissue and relaxation techniques. He brings over 12 years of experience to help clients relieve stress and tension.",
+    packages: [
+      {
+        id: 4,
+        title: "Detoxifying Body Wrap",
+        image:
+          "https://images.pexels.com/photos/6144438/pexels-photo-6144438.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        description:
+          "A full-body detox wrap that purifies your skin, removes toxins, and leaves your body feeling rejuvenated.",
+        price: 130,
+      },
+    ],
   },
 ];
 
