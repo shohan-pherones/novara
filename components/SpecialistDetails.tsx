@@ -36,7 +36,7 @@ const SpecialistDetails = ({ specialist }: SpecialistDetailsProps) => {
       {specialist?.packages?.length > 0 && (
         <div className="mt-10">
           <SectionTitle title="Available Packages" />
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+          <div className="grid__container">
             {specialist.packages.map((service) => (
               <ServiceItem key={service.id} service={service} />
             ))}

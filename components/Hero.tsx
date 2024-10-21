@@ -6,6 +6,7 @@ interface HeroProps {
   description: string;
   ctaLabel: string;
   ctaRoute: string;
+  isBlogPage?: boolean;
 }
 
 const Hero = ({
@@ -14,6 +15,7 @@ const Hero = ({
   description,
   ctaLabel,
   ctaRoute,
+  isBlogPage,
 }: HeroProps) => {
   return (
     <section
@@ -29,7 +31,11 @@ const Hero = ({
             {headline}
           </h1>
           <p className="mb-5">{description}</p>
-          <Link href={ctaRoute} className="btn btn-secondary">
+          <Link
+            href={ctaRoute}
+            target={isBlogPage ? "_blank" : "_self"}
+            className="btn btn-secondary"
+          >
             {ctaLabel}
           </Link>
         </div>

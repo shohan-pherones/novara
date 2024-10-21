@@ -11,7 +11,7 @@ const Specialists = ({
   return (
     <section id="browse" className="wrapper">
       <SectionTitle title="Specialists" />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
+      <div className="grid__container">
         {isSpecialistsPage &&
           specialistItems.map((specialist) => (
             <SpecialistItem key={specialist.id} specialist={specialist} />

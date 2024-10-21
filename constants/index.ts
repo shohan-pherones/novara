@@ -429,3 +429,73 @@ export const timeslots = {
   "4": ["8AM - 12PM", "4PM - 8PM"],
   "5": ["8AM - 1PM", "1PM - 6PM"],
 };
+
+export const blogItems: {
+  id: number;
+  title: string;
+  cover: string;
+  body: string;
+  url: string;
+  published_date: string;
+  author: {
+    name: string;
+    image: string;
+  };
+}[] = [
+  {
+    id: 1,
+    title: "The Ultimate Guide to Choosing the Right Beauty Salon or Spa",
+    cover:
+      "https://images.pexels.com/photos/1654834/pexels-photo-1654834.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    body: "Discover the secrets to finding the perfect beauty salon or spa that caters to your unique needs and preferences. From considering factors like location, services offered, and price range to reading reviews and recommendations, this comprehensive guide will help you make an informed decision.",
+    url: "https://example.com/blog/1",
+    published_date: "2023-12-15",
+    author: {
+      name: "Sarah Johnson",
+      image:
+        "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  },
+  {
+    id: 2,
+    title: "The Latest Trends in Beauty and Wellness",
+    cover:
+      "https://images.pexels.com/photos/3331486/pexels-photo-3331486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    body: "Stay ahead of the curve with our roundup of the hottest beauty and wellness trends. From natural skincare and sustainable beauty products to innovative treatments and holistic therapies, discover what's new and exciting in the world of beauty.",
+    url: "https://example.com/blog/2",
+    published_date: "2024-01-20",
+    author: {
+      name: "David Lee",
+      image:
+        "https://images.pexels.com/photos/1270076/pexels-photo-1270076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  },
+  {
+    id: 3,
+    title: "DIY Beauty Treatments: Tips and Tricks",
+    cover:
+      "https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    body: "Learn how to pamper yourself at home with these easy-to-follow DIY beauty treatments. From homemade face masks and hair conditioners to natural nail care and body scrubs, discover simple yet effective ways to enhance your beauty routine.",
+    url: "https://example.com/blog/3",
+    published_date: "2024-02-10",
+    author: {
+      name: "Emily Carter",
+      image:
+        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  },
+  {
+    id: 4,
+    title: "The Benefits of Regular Facials and Massages",
+    cover:
+      "https://images.pexels.com/photos/3997989/pexels-photo-3997989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    body: "Uncover the transformative power of regular facials and massages. From improving skin health and reducing stress to promoting relaxation and well-being, discover why these treatments are essential for a balanced and beautiful lifestyle.",
+    url: "https://example.com/blog/4",
+    published_date: "2024-03-05",
+    author: {
+      name: "Michael Brown",
+      image:
+        "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    },
+  },
+];
