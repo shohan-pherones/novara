@@ -82,6 +82,14 @@ export const heroItems = {
     ctaLabel: "Get to Know Our Specialists",
     ctaRoute: "/specialists#browse",
   },
+  about: {
+    image: "/images/hero__04.jpg",
+    headline: "Your Beauty Journey With Novara",
+    description:
+      "At Novara, our team of skilled beauty and wellness professionals is dedicated to providing exceptional care. With expertise spanning years in the industry, our specialists, from seasoned aestheticians to expert therapists, are committed to creating a rejuvenating and personalized experience for every client.",
+    ctaLabel: "Explore Our Services",
+    ctaRoute: "/services#browse",
+  },
 };
 
 export const serviceItems = [
@@ -497,5 +505,27 @@ export const blogItems: {
       image:
         "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
+  },
+];
+
+export const aboutPhotoItems: {
+  id: 1 | 2 | 3 | 4;
+  image: string;
+}[] = [
+  {
+    id: 1,
+    image: "/images/about__photo__01.jpg",
+  },
+  {
+    id: 2,
+    image: "/images/about__photo__02.jpg",
+  },
+  {
+    id: 3,
+    image: "/images/about__photo__03.jpg",
+  },
+  {
+    id: 4,
+    image: "/images/about__photo__04.jpg",
   },
 ];
